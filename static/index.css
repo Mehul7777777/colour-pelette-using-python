@@ -1,0 +1,17 @@
+body{
+    text-align:center;
+    background-color: #e1e8eb;
+}
+.button{
+    background-color:#ffc107;
+    color: black;
+}
+.file{
+    margin-top: 10px;
+}
+.color-block{
+    margin-left: 10px;
+    display:inline;
+    padding-left: 40px;
+    padding-right: 40px;
+}

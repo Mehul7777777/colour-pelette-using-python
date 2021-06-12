@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+        <link rel="stylesheet" href="static/index.css">
+        <title>Colour Palette</title>
+{%  endblock%}
+
+{% block body %}
+        <nav class="navbar sticky-top text-white" style="background-color:#7952b3">
+          <div class="container-fluid d-inline text-center">
+                  <p class="h2">Image Processing</p>
+          </div>
+        </nav>
+        <h2>Select a file to upload</h2>
+        <p>
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                        {% for message in messages %}
+                                {{ message }}
+                        {% endfor %}
+                {% endif %}
+        {% endwith %}
+        </p>
+        {% if filename %}
+                <div>
+                        <img src="{{ url_for('display_image', filename=filename) }}" style="width:300px;height:300px">
+                </div>
+        {% endif %}
+        <form method="POST" action="/" enctype="multipart/form-data">
+                <p>
+                        <input type="file" name="file" autocomplete="off" required class="file">
+                </p>
+                <p>
+                        <input type="submit" value="Submit" class="btn button">
+                </p>
+        </form>
+        {% for colour in colours %}
+                <p style="display:inline">rgb{{ colour }}</p>
+                <div class="color-block" style="background-color: rgb{{ colour }}"></div><br>
+        {% endfor %}
+{% endblock %}
