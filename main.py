@@ -10,7 +10,7 @@ app = Flask(__name__)
 Bootstrap(app)
 
 UPLOAD_FOLDER = "static/uploads/"
-app.secret_key = "7878787"
+app.secret_key = "YOUR-SECRET-KEY"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
