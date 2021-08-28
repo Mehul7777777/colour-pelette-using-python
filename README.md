@@ -1,1 +1,0 @@
-# colour-pelette-using-python
